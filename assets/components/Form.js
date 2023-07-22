@@ -10,14 +10,14 @@ const Form = () => {
   return (
     <View style ={styles.container}>
        <TextInput
-        placeholder='Enter Text'
+        placeholder='Enter Name'
         style = {styles.textInputStyle}
         value = {text}
         onChangeText={(value)=>{setText(value)}}
         />
         <Text>{'\n\n'}</Text>
         <Button  
-        title='Increment age'
+        title='Enter Email'
         onPress={() => {setAge(age+3)}}
         />
         <Text>{'\n\n'}</Text>
