@@ -20,7 +20,7 @@ const RandomUsersScreen = () => {
 
         }catch(error){
             console.error('Error fetching users:',error)
-            setLoading(false);
+            setLoading(false)
 
         }
     }
