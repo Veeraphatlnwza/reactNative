@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import RandomUsersScreen from './components/RandomUsersScreen'
+import FlatList_HeaderFooter from './components/FlatList_HeaderFooter'
 
 
 const App = () => {
   return (
     <View style={styles.container}>
-        <RandomUsersScreen/>
+        <FlatList_HeaderFooter/>
     </View>
   )
 }
@@ -17,6 +17,6 @@ const styles = StyleSheet.create({
   container:{
     flex:1,   
     justifyContent:'center',    
-    alignItems:'center'   
+    alignItems:'left'   
  }
 })
