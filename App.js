@@ -1,23 +1,22 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Example_useEffect from './assets/components/Example_useEffect';
+import RandomUsersScreen from './components/RandomUsersScreen'
+
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Example_useEffect/>
-
-
+        <RandomUsersScreen/>
     </View>
-  );
+  )
 }
 
 export default App
 
 const styles = StyleSheet.create({
   container:{
-     flex:1,   
-     justifyContent:'center',    
-     alignItems:'center'   
-  }
- })
+    flex:1,   
+    justifyContent:'center',    
+    alignItems:'center'   
+ }
+})
