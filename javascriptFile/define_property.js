@@ -1,7 +1,7 @@
 let song = {};
 
-song.name = "Good Guys";
-song.artist = "LANY";
-song.year = 2020;
+song.name = "Just Another Thursday";
+song.artist = "Dolorians";
+song.year = 2023;
 
 console.log(song);
