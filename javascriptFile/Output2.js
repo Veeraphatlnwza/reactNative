@@ -1,9 +1,9 @@
 let user = {
-  name: "Sukrit",
-  age: 22,
+  name: "Apichai",
+  age: 28,
 };
 function hello() {
-  console.log("Hello World!!!");
+  console.log("Hello World!");
 }
 
 console.log(user);

@@ -1,85 +1,64 @@
-import {
-  StyleSheet,
-  View,
-  TextInput,
-  Text,
-  TouchableHighlight,
-} from "react-native";
-import { React, useState } from "react";
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native'
+import React, { useState } from 'react'
 
 const Recap = () => {
-  const [email, setInputEmail] = useState("");
-  const [password, setInputPass] = useState("");
 
-  const checkTextInput = () => {
-    //Check for the password TextInput
-    if (!email.trim() && !password.trim()) {
-      alert("Please Enter Email & Password");
-      return;
+    const [textInputEmail, setTextInputEmail] = useState('');
+    const [textInputPassword, setTextInputPassword] = useState('');
+
+    const alertTextInput = () => {
+        alert(
+            'email: ' + textInputEmail + 
+            '\npassword: ' + textInputPassword
+        )
     }
-    if (!email.trim()) {
-      alert("Please Enter Email");
-      return;
-    }
-    if (!password.trim()) {
-      alert("Please Enter Password");
-      return;
-    }
-    AlertInfo();
-  };
 
-  const AlertInfo = () => {
-    alert("Email : " + email + "\nPassword : " + password);
-  };
+    return (
+        <View style={styles.container}>
+        <TextInput
+            placeholder = 'Email'
+            style = {styles.input}
+            value = {textInputEmail}
+            onChangeText = {(value) => {setTextInputEmail(value)}}
+        />
+        
+        <TextInput
+            placeholder = 'Password'
+            style = {styles.input}
+            value = {textInputPassword}
+            onChangeText = {(value) => {setTextInputPassword(value)}}
+        />
+        <Text>{'\n'}</Text>
+        <Button
+            title='Submit'
+            style={styles.submitButton}
+            onPress={() => {
+                {alertTextInput()}
+            }}
+        />
+        </View>
+    )
+}
 
-  return (
-    <View>
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={(value) => setInputEmail(value)}
-      />
-
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        value={password}
-        onChangeText={(value) => setInputPass(value)}
-      />
-      <TouchableHighlight 
-      style = {styles.submitButton}
-      underlayColor={"#8B9B65"}
-      onPress={() => {checkTextInput();}}
-      >
-      <Text style={styles.submitButtonText}>Submit</Text>
-      </TouchableHighlight>
-    </View>
-  );
-};
-
-export default Recap;
+export default Recap
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 23,
-  },
-  input: {
-    margin: 15,
-    height: 40,
-    width: 200,
-    borderColor: "#7a42f4",
-    borderWidth: 1,
-  },
-  submitButton: {
-    alignItems:'center',
-    backgroundColor: "#B2C67F",
-    padding: 10,
-    margin: 15,
-    height: 40,
-    
-  },
-  submitButtonText: {
-    color: "white",
-  },
-});
+    container: {
+        paddingTop: 23
+    },
+    input: {
+        margin: 15,
+        height: 40,
+        borderColor: '#7a42f4',
+        borderWidth: 1
+    },
+    submitButton: {
+        backgroundColor: '#7a42f4',
+        padding: 10,
+        margin: 15,
+        height: 40,
+    },
+    submitButtonText: {
+        color: 'white'
+    }
+})

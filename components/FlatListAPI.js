@@ -5,13 +5,17 @@ import {
   SafeAreaView,
   ActivityIndicator,
   FlatList,
-  RefreshControl
+  RefreshControl,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 
 const FlatListAPI = () => {
   const [refreshing, setRefreshing] = useState(true);
   const [dataSource, setDataSource] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   //Service to get the data from the server to render
   const getData = async () => {
@@ -27,19 +31,17 @@ const FlatListAPI = () => {
   };
 
   const getItem = (item) => {
-    //Function for click on an item
-    alert("Id : " + item.id + "\nTitle : " + item.title);
+    //Funiction for click on an item
+    alert("Id: " + item.id + " Title: " + item.title);
   };
 
   const ItemView = ({ item }) => {
-    return <Text 
-          style={styles.itemStyle} 
-          onPress={() => getItem(item)}>{item.title}</Text> ;
+    return (
+      <Text style={styles.itemStyle} onPress={() => getItem(item)}>
+        {item.title}
+      </Text>
+    );
   };
-
-  useEffect(() => {
-    getData();
-  }, []);
 
   const ItemSeparatorView = () => {
     return (
@@ -56,7 +58,7 @@ const FlatListAPI = () => {
   const onRefresh = () => {
     //Clear old data of the list
     setDataSource([]);
-    //Call the service to get the lastest data
+    //Call the service to get the latest data
     getData();
   };
 
@@ -66,18 +68,13 @@ const FlatListAPI = () => {
         {refreshing ? <ActivityIndicator /> : null}
         <FlatList
           data={dataSource}
-          keyExtractor={(item,index) => index.toString()}
+          keyExtractor={(index) => index.toString()}
           ItemSeparatorComponent={ItemSeparatorView}
           renderItem={ItemView}
           refreshControl={
-            <RefreshControl
-            refreshing = {refreshing}
-            onRefresh={onRefresh}
-            />
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
           }
-          
         />
-        
       </View>
     </SafeAreaView>
   );

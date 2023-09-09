@@ -1,13 +1,16 @@
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import styles from './components/styles'
 
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import styles from './components/style';
-
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-     <Text style={styles.row}>React</Text>
-     <Text style={styles.row}>Native</Text>
+      <Text style={styles.row}>React</Text>
+      <Text style={styles.row}>Native</Text>
     </View>
-  );
+  )
 }
+
+export default App
+
+//const styles = StyleSheet.create({})

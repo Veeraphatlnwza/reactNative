@@ -1,28 +1,35 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
 import React from "react";
 
 const TouchablePractice = () => {
   return (
-    <SafeAreaView style={styles.container}>
-    <View>
-      <TouchableOpacity style={styles.buttonFacebookStyle}>
-        <Image
-          source={require("../assets/facebook.png")}
-          style={styles.buttonImageIconStyle}
-        />
-        <View style={styles.buttonIconSeparatorStyle} />
-        <Text style={styles.buttonTextStyle}>Login Using Facebook</Text>
-      </TouchableOpacity>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.buttonFacebookStyle}>
+          <Image
+            style={styles.buttonImageIconStyle}
+            source={require("../assets/facebook.png")}
+          />
+          <View style={styles.buttonIconSeparatorStyle} />
+          <Text style={styles.buttonTextStyle}>Login Using Facebook</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.buttonGPlusStyle}>
-        <Image
-          source={require("../assets/google-plus.png")}
-          style={styles.buttonImageIconStyle}
-        />
-        <View style={styles.buttonIconSeparatorStyle} />
-        <Text style={styles.buttonTextStyle}>Login Using Facebook</Text>
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity style={styles.buttonGPlusStyle}>
+          <Image
+            style={styles.buttonImageIconStyle}
+            source={require("../assets/google-plus.png")}
+          />
+          <View style={styles.buttonIconSeparatorStyle} />
+          <Text style={styles.buttonTextStyle}>Login Using Google Plus</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
@@ -43,8 +50,10 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: "#fff",
     height: 40,
+    width: '100%',
     borderRadius: 5,
     margin: 5,
+
   },
   buttonFacebookStyle: {
     flexDirection: "row",
@@ -53,6 +62,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: "#fff",
     height: 40,
+    width: '100%',
     borderRadius: 5,
     margin: 5,
   },
@@ -68,7 +78,6 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     marginLeft: 10,
   },
-
   buttonIconSeparatorStyle: {
     backgroundColor: "#fff",
     width: 1,

@@ -1,14 +1,13 @@
 import { StyleSheet, Text, View, Button } from "react-native";
 import React from "react";
 
-const FirstPage = ({ navigation }) => {
+const FirstPage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>This is the First Page of the app</Text>
-      <Text>{"\n"}</Text>
       <Button
-        title="Go To Second page"
-        onPress={() => navigation.navigate("SecondPage")}
+        title="Go to Second Page"
+        onPress={() => navigation.navigate("Second")}
       />
     </View>
   );

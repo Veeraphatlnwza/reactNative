@@ -1,46 +1,39 @@
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
-import { React, useState } from "react";
+import { StyleSheet, Text, View, Button } from 'react-native'
+import React, { useState } from 'react'
+import { TextInput } from 'react-native'
 
 const IncrementCounter = () => {
-  const [age, setAge] = useState(23);
-  const increment = (num) => {
-    switch(num){
-        case(1):
-            setAge((a) => a + 1);
-            break
-        case(3):
-            setAge((a) => a+3);
-            break
+
+    const [age, setAge] = useState(23)
+
+    const increment = () => {
+        setAge(a => a + 1)
     }
-  };
 
-  return (
-    <View style={styles.container}>
-      <Text 
-        style = {{fontSize: 24, fontWeight: 'bold'}}>
-        Your age: {age}
-        {"\n\n"}
-      </Text>
+    return (
+        <View>
+            <Text style={{fontSize: 24, fontStyle: 'bold'}}>
+                Your age: {age}</Text>
+            <Text>{'\n'}</Text>
+            <Button
+                title='+3'
+                onPress={() => {
+                    increment(); 
+                    increment();
+                    increment();
+            }}
+            />
+            <Text>{'\n'}</Text>
+            <Button
+                title='+1'
+                onPress={() => {
+                    increment();
+                } }
+            />
+        </View>
+    )
+}
 
-      <Button 
-      title="+3" 
-      onPress={() => increment(3)} />
+export default IncrementCounter
 
-      <Text>{"\n\n"}</Text>
-
-      <Button 
-      title="+1" 
-      onPress={() => increment(1)} />
-    </View>
-  );
-};
-
-export default IncrementCounter;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 35,
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({})
